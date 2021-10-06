@@ -1,0 +1,39 @@
+#contact-form {
+    display: grid;
+    grid-template: repeat(2,40% / 2fr, 1fr);
+}
+
+.to-email{
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: space-between;
+}
+
+.subject-email{
+    grid-column:2;
+    grid-row: 1;
+    flex-direction: row-reverse;
+}
+
+.message-email{
+    grid-column: 1/3;
+    grid-row: 2;
+    align-content:center;
+    flex-wrap: wrap-reverse;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.send{
+    grid-column: 1/3;
+    grid-row: 3;
+    align-content:center;
+    flex-wrap: wrap-reverse;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+}
