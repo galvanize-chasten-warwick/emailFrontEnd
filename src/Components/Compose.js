@@ -18,11 +18,17 @@ export default function Compose({emails}) {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ title: 'React POST Request Example' })
+            body: JSON.stringify({
+                "sender": 'jane@galvanize.com',
+                "recipient": inputField.emailComp,
+                "subject": inputField.subjectComp,
+                "message": inputField.messageComp,
+                "date": 'Test Date',
+                "id": 255
+              })
         };
-        fetch('http://localhost:3001/emails/send', requestOptions)
-            .then(response => response.json())
-            .then(data => this.setState({ postId: data.id }));
+        fetch('http://localhost:3001/send', requestOptions)
+            .then(response => response.json());
     }
         //console.log(event.target.elements.compose_email.value) // from elements property
         //console.log(event.target.compose_subject.value)          // or directly
